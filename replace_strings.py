@@ -9,7 +9,7 @@ str2_regex = re.compile('_0x19e38f\(0x([0-9a-f]+)\)')
 str3_regex = re.compile('_0x69aac\(0x([0-9a-f]+)\)')
 str4_regex = re.compile('_0x591e38\(0x([0-9a-f]+)\)')
 
-with open('badger-dao-malicious-script.js', 'r') as f_in:
+with open('badger-dao-malicious-script-beautified.js', 'r') as f_in:
     with open('badger-dao-malicious-script-restring.js', 'w') as f_out:
         for line in f_in:
             rm = str_regex.findall(line)
@@ -18,12 +18,7 @@ with open('badger-dao-malicious-script.js', 'r') as f_in:
             r3m = str3_regex.findall(line)
             r4m = str4_regex.findall(line)
             for match in rm:
-                # print('-'*50)
-                # print(match)
-                # print(line)
                 line = line.replace(f'get_text_fn(0x{match})', f"'{texts_arr[int('0x' + match, 16)]}'")
-                # print(line)
-                # exit()
             for match in r1m:
                 line = line.replace(f'get_text_var(0x{match})', f"'{texts_arr[int('0x' + match, 16)]}'")
             for match in r2m:
@@ -33,4 +28,3 @@ with open('badger-dao-malicious-script.js', 'r') as f_in:
             for match in r4m:
                 line = line.replace(f'_0x591e38(0x{match})', f"'{texts_arr[int('0x' + match, 16)]}'")
             f_out.write(line)
-            # f_out.write(line.replace(''))
