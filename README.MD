@@ -1,6 +1,20 @@
 # BadgerDAO Malicious Script
 
 ## Overview
+On the 03-12-2021 there was an attack on the [BadgerDAO](https://app.badger.com/) website that led to ~120$M being stolen by some attacker.
+
+More details about the attack in our blogpost [here]().
+
+We decided to analyze the malicious code (found [here](https://web.archive.org/web/20211129204203/https://app.badger.com/)) that was injected into the site.
+
+The code was originally obfuscated (`badger-dao-malicious-script-raw.js`), we then beautified it using `replace_strings.py` and some manual work.
+Final readable version in `badger-dao.html`.
+
+We did this by reinjecting the code into the live version of the app using Burp.
+
+An interesting thing that the code does is use `increaseAllowance` instead of `approve` when interacting with a different vault than the one the attacker wants access to.
+
+The reason for this is the way Metamask shows those transactions, the screenshots below demonstrate it well. Metamask doesn't tell you it's an approval operation, nor the ERC20 Token name when dealing with `increaseAllowance`, this makes it less suspicious to the user.
 
 ## Flow
 The following analysis is based on the beautified code in `badger-dao.html` .
