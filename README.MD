@@ -3,7 +3,7 @@
 ## Overview
 On the 03-12-2021 there was an attack on the [BadgerDAO](https://app.badger.com/) website that led to ~120$M being stolen by some attacker.
 
-More details about the attack in our blogpost [here]().
+More details about the attack in our blogpost [here](https://zengo.com/the-badgerdao-hack-what-really-happened-and-why-it-matters/).
 
 We decided to analyze the malicious code (found [here](https://web.archive.org/web/20211129204203/https://app.badger.com/)) that was injected into the site.
 
